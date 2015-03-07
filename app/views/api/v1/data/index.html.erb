@@ -4,6 +4,8 @@
     <h3><%= lang_change(article["title"])%></h3>
 
     <p><%= lang_change(article["teaser"]) %></p>
+
+    <div>Link to <%= link_to("article", article["link"][2]["__content__"]) %></div>
   </div>
 
 <% end %>

@@ -1,9 +1,9 @@
 <% @articles.map do |article| %>
 
   <div>
-    <h3><%= Language.new(article["title"].gsub(/[^[a-zA-Z.!?,\s]]/, "").split.join("+")) %></h3>
+    <h3><%= lang_change(article["title"])%></h3>
 
-    <p><%= Language.new(article["teaser"].gsub(/[^[a-zA-Z.!?,\s]]/, "").split.join("+")) %></p>
+    <p><%= lang_change(article["teaser"]) %></p>
   </div>
 
 <% end %>

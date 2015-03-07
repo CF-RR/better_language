@@ -3,6 +3,7 @@ class Api::V1::DataController < ApplicationController
 
   def index
     @articles = News.new('Iraq').content
+    @yoda = Language.new("Don't kill the younglings").content
     # @articles = @news.content
     # if @articles.nil?
     #   render json: "Please specify a language and news topic."

@@ -3,13 +3,18 @@ require 'test_helper'
 class Api::V1::DataControllerTest < ActionController::TestCase
   test "index page happens with params" do
 
-    get :index, location: "New York"
+    get :index, query: "money"
     assert_response :success
   end
 
-  test "Error message if params are not specified." do
-    get :index
-    assert_select "body", "Please specify a location, such as 'Durham NC' or '27705.'"
+  test "five articles are returned" do
+    get :index, query: "finance"
+    news_count = News.new("finance").content["nprml"]["list"]["story"].count
+    assert_equal 5, news_count
   end
 
+  test "article title becomes yodafied" do
+    test_string = Language.new("This is a test string").content
+    assert_equal test_string, "A test string this is. Yes, Hmmm."
+  end
 end

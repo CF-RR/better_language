@@ -4,11 +4,5 @@ class Api::V1::DataController < ApplicationController
   def index
     @articles = News.new(params[:query]).content
     @articles = @articles["nprml"]["list"]["story"]
-    # @articles = @news.content
-    # if @articles.nil?
-    #   render json: "Please specify a language and news topic."
-    # else
-    #   render json: @articles
-    # end
   end
 end

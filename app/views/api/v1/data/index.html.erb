@@ -1,0 +1,9 @@
+<% @articles.map do |article| %>
+
+  <div>
+    <h3><%= article["title"] %></h3>
+
+    <p><%= article["teaser"] %></p>
+  </div>
+
+<% end %>
